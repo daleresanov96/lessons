@@ -1,0 +1,15 @@
+package test;
+
+import java.time.LocalDateTime;
+import java.time.OffsetDateTime;
+import java.time.ZonedDateTime;
+
+public class Test01 {
+	public static void main(String[]args) {
+		LocalDateTime ldt=LocalDateTime.now();
+		OffsetDateTime odt=OffsetDateTime.now();
+		ZonedDateTime zdt=ZonetDateTime.now();
+		System.out.println(ldt);
+
+	}
+}
