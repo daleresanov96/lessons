@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Test02</title>
+	<meta charset="utf-8">
+	<style type="text/css">
+		.blue{
+			color: blue;
+		}
+	</style>
+</head>
+<body>
+	<h1>Test02</h1>
+	
+	<hr>
+
+	<table>
+		<thead>
+			<tr class="bl">
+				<td class="bl2">ぶり</td>	
+				<td class="bl3">鰤</td>
+			</tr>
+		</thead>
+		<thead>
+			<tr class="bl">
+				<td class="bl2">はまち</td>
+				<td class="bl3">魬</td>
+			</tr>
+		</thead>
+		<thead>
+			<tr class="bl">
+				<td class="bl2">たい</td>
+				<td class="bl3">鯛</td>
+			</tr>
+		</thead>
+		<thead>
+			<tr class="bl">
+				<td class="bl2"> こはだ </td>
+				<td class="bl3">小鰭</td>
+			</tr>
+		</thead>
+	</table>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js">
+	</script>
+		<script>
+		$(function(){
+			$(".bl").click(function(){
+				$(this).addClass("blue");
+			});
+		})
+		$(function(){
+			$(".bl2").click(function(){
+				$(this).hide();
+				$(".bl3").hide();
+			});
+		})
+		</script>
+
+</body>
+</html>

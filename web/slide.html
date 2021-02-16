@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<h1>slide show スライドショー</h1>
+ 	画像をクリックしたら、次の画像を表示する
+ 	<hr>
+ 	<img src="https://th.bing.com/th/id/R1552e73b8b5fc2c0215a1306a5b0417d?rik=%2ffZD3olzvFRVQQ&riu=http%3a%2f%2fsomo-somo.net%2fwp-content%2fuploads%2f2014%2f12%2fjs-in-a-rounded-square_318-10133-e1418012222418.jpg&ehk=JPzdGmKcC%2bXMRb5fEluKgsx7hxQmDqx2%2bWPeFVVWcIE%3d&risl=&pid=ImgRaw">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js">
+	</script>
+	<script>
+		$(function(){
+			let num=1;
+			$("h1").click(function(){
+				if (num==1) {
+				$("img").attr("src","https://programming-style.com/wp-content/uploads/html-ref-attr_global-fb.png");
+					num+=2;
+				}else{
+					$("img").attr("src","https://th.bing.com/th/id/R1552e73b8b5fc2c0215a1306a5b0417d?rik=%2ffZD3olzvFRVQQ&riu=http%3a%2f%2fsomo-somo.net%2fwp-content%2fuploads%2f2014%2f12%2fjs-in-a-rounded-square_318-10133-e1418012222418.jpg&ehk=JPzdGmKcC%2bXMRb5fEluKgsx7hxQmDqx2%2bWPeFVVWcIE%3d&risl=&pid=ImgRaw");
+					num-=2;
+				}
+			});
+		})
+	</script>
+</body>
+</html>

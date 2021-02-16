@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Test03</title>
+	<meta charset="utf-8">
+	<style type="text/css">
+		.blue{
+			color: blue;
+		}
+		img{
+			width: 300px;
+		}
+		.wt{
+			width: 600px;
+		}
+	</style>
+</head>
+<body>
+	<h1>Test03</h1>
+	
+	<hr>
+
+	<table>
+		<thead>
+			<tr class="bl">
+				<td class="bl2">ぶり</td>	
+				<td class="bl3">鰤</td>
+			</tr>
+		</thead>
+		<thead>
+			<tr class="bl">
+				<td class="bl2">はまち</td>
+				<td class="bl3">魬</td>
+			</tr>
+		</thead>
+		<thead>
+			<tr class="bl">
+				<td class="bl2">たい</td>
+				<td class="bl3">鯛</td>
+			</tr>
+		</thead>
+		<thead>
+			<tr class="bl">
+				<td class="bl2"> こはだ </td>
+				<td class="bl3">小鰭</td>
+			</tr>
+		</thead>
+	</table>
+
+	<img class="img01" src="https://images.pexels.com/photos/1089438/pexels-photo-1089438.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500">
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js">
+	</script>
+		<script>
+		$(function(){
+			$(".bl").click(function(){
+				$(this).addClass("blue");
+			});
+		})
+		$(function(){
+			$(".bl2").click(function(){
+				$(this).hide();
+				$(".bl3").hide();
+			});
+		})
+		$(function(){
+			$(".img01").click(function(){
+				$(this).addClass("wt");
+			});
+		})
+		</script>
+
+</body>
+</html>

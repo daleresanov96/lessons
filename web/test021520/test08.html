@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Test03</title>
+	<meta charset="utf-8">
+	<style type="text/css">
+		.blue{
+			color: blue;
+		}
+		img{
+			width: 300px;
+		}
+		.wt{
+			width: 600px;
+		}
+	</style>
+</head>
+<body>
+	<h1>Test03</h1>
+	
+	<hr>
+
+	<table>
+		<thead>
+			<tr class="bl">
+				<td class="bl2">ぶり</td>	
+				<td class="bl3">鰤</td>
+			</tr>
+		</thead>
+		<thead>
+			<tr class="bl">
+				<td class="bl2">はまち</td>
+				<td class="bl3">魬</td>
+			</tr>
+		</thead>
+		<thead>
+			<tr class="bl">
+				<td class="bl2">たい</td>
+				<td class="bl3">鯛</td>
+			</tr>
+		</thead>
+		<thead>
+			<tr class="bl">
+				<td class="bl2"> こはだ </td>
+				<td class="bl3">小鰭</td>
+			</tr>
+		</thead>
+	</table>
+
+	<img class="img01" src="https://images.pexels.com/photos/1089438/pexels-photo-1089438.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500">
+	<h2 class="h2">IT</h2>
+
+	<img class="img02" src="https://images.pexels.com/photos/924824/pexels-photo-924824.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260">
+
+	<img class="img03" src="https://images.pexels.com/photos/2246476/pexels-photo-2246476.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260">
+
+
+	<img class="img04" src="https://images.pexels.com/photos/41951/solar-system-emergence-spitzer-telescope-telescope-41951.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500">
+
+	<h3 class="h3">Space01</h3>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js">
+	</script>
+	<script>
+		$(".h2").hide();
+		let num=0
+		let num2=0
+		const nums=[
+"https://images.pexels.com/photos/41951/solar-system-emergence-spitzer-telescope-telescope-41951.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+"https://images.pexels.com/photos/924824/pexels-photo-924824.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260",
+"https://images.pexels.com/photos/2246476/pexels-photo-2246476.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260",
+"https://images.pexels.com/photos/1089438/pexels-photo-1089438.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"]
+		const idd=["Space01","Space02","Town","IT"]
+		$(function(){
+			$(".bl").click(function(){
+				$(this).addClass("blue");
+			});
+			$(".bl2").click(function(){
+				$(this).hide();
+				$(".bl3").hide();
+			});
+			$(".img01").click(function(){
+				$(this).addClass("wt");
+				$(".h2").show();
+			});
+			$(".h2").click(function(){
+				$(this).hide();
+				$(".img01").hide();
+			});
+			$(".img02").click(function(){
+				if (num==0) {
+					$(".img02").attr("src","https://images.pexels.com/photos/2246476/pexels-photo-2246476.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260")
+					$(".img03").attr("src","https://images.pexels.com/photos/924824/pexels-photo-924824.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260")
+					num++
+				}else{
+					$(".img03").attr("src","https://images.pexels.com/photos/2246476/pexels-photo-2246476.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260")
+					$(".img02").attr("src","https://images.pexels.com/photos/924824/pexels-photo-924824.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260")
+					num--
+				}
+			});
+			$(".img03").click(function(){
+				if (num==0) {
+					$(".img02").attr("src","https://images.pexels.com/photos/2246476/pexels-photo-2246476.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260")
+					$(".img03").attr("src","https://images.pexels.com/photos/924824/pexels-photo-924824.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260")
+					num++
+				}else{
+					$(".img03").attr("src","https://images.pexels.com/photos/2246476/pexels-photo-2246476.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260")
+					$(".img02").attr("src","https://images.pexels.com/photos/924824/pexels-photo-924824.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260")
+					num--
+				}
+			});
+			$(".img04").click(function(){
+				num2+=1
+				if (num2>=4) {
+				}
+				$(this).attr("src",nums[num2]);
+				$("h3").text(idd[num2]);
+			});
+		})
+
+	</script>
+
+</body>
+</html>

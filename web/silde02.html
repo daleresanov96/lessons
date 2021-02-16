@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>slide show</title>
+</head>
+<body>
+<button class="button2" type="submit">Click me</button>
+for change img
+<hr>
+<img src="https://blognumbers.files.wordpress.com/2010/09/1.jpg">
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+       <script>
+       	$(function(){
+       		const nums=["https://blognumbers.files.wordpress.com/2010/09/1.jpg","https://blognumbers.files.wordpress.com/2010/09/2.jpg","https://blognumbers.files.wordpress.com/2010/09/3.jpg","https://blognumbers.files.wordpress.com/2010/09/4.jpg"]
+       		let num=0;
+       		$(".button2").click(function(){
+       			num++;
+       			if (num>=nums.length) {
+       				num=0
+       			}
+       			$("img").attr("src",nums[num]);
+       		})
+       	})
+       </script>
+</body>
+</html>

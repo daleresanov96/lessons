@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>test02</title>
+	<meta charset="utf-8">
+	<style>
+		table{
+			border : solid 1px black;
+
+			
+		}
+
+		td{
+			border: solid 1px black;
+		}
+		.grape{
+			background-color: red;
+			color : yellow;
+
+		}
+		.a{
+			color: aqua;
+		}
+		.blue{
+			color: blue;
+		}
+		.large{
+			font-size: 30pt;
+		}
+	</style>
+</head>
+<body>
+	<h1>test02</h1>
+
+	<hr>
+
+
+
+
+
+	<table>
+		<thead>
+		<tr class="large">		
+			<td>ぶり</td>				
+			<td >鰤</td>
+			
+		</tr>
+	    </thead>
+	    <tbody>
+		<tr class="large">		
+			<td>はまち</td>				
+			<td >魬</td>
+			
+		</tr>
+		<tr class="large">
+			<td>たい</td>
+			<td>鯛</td>
+			
+		</tr>
+		<tr class="large">
+			<td> こはだ </td>
+			<td>小鰭</td>
+			
+		</tr>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+	$(function(){
+		$("tr").on("click",function(){
+			$(this).addClass("blue")
+		})
+	})
+
+	</script>
+	</tbody>
+
+	</table>
+
+</body>
+</html>
