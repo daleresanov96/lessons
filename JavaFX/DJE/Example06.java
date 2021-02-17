@@ -17,6 +17,9 @@ import javafx.scene.text.FontWeight;
 import javafx.stage.Stage;
 
 public class Example06 extends Application{
+	public double tx;
+	public double ty;
+
 	public static void main(String[] args) {
 		launch(args);
 	}
@@ -28,9 +31,8 @@ public class Example06 extends Application{
 		Scene scene=new Scene(root);
 		stage.setScene(scene);
 
-		Canvas canvas=new Canvas(512,512);
+		Canvas canvas=new Canvas(1000,1000);
 		root.getChildren().add(canvas);
-
 		ArrayList<String>input=new ArrayList<String>();
 
 		scene.setOnKeyPressed(new EventHandler<KeyEvent>(){
@@ -57,13 +59,17 @@ public class Example06 extends Application{
 		briefcase.setImage("O2.gif");
 
 		ArrayList<Sprite>moneybagList=new ArrayList<Sprite>();
-		int dots=8;
+		int dots=2;
 		for (int i=0;i<dots;i++){
 			Sprite moneybag=new Sprite();
 			
 			moneybag.setImage("q.gif");
-			double px=350*Math.random()+50;
-			double py=350*Math.random()+50;
+			double px=750*Math.random()+100;
+			double py=750*Math.random()+105;
+
+			// px=px*(stage.getWidth()/tx);
+			// py=py*(stage.getHeight()/ty);
+
 			moneybag.setPosition(px,py);
 			moneybagList.add(moneybag);
 		}
@@ -94,8 +100,15 @@ public class Example06 extends Application{
 						moneybag.setImage("q.gif");
 					}
 				}
+				double ppx=stage.getWidth()-16;
+				double ppy=stage.getHeight()-39;
+				// System.out.println(tx);
+				briefcase.setXY(tx,ty);
+				tx=ppx;ty=ppy;
+
+				canvas.setWidth(ppx);canvas.setHeight(ppy);
 				gc.clearRect(0,0,512,512);
-				gc.drawImage(ii,0,0);
+				gc.drawImage(ii,0,0,ppx,ppy);
 				briefcase.render(gc);
 				for(Sprite moneybag:moneybagList)
 					moneybag.render(gc);

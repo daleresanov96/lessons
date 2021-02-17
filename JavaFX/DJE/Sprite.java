@@ -10,12 +10,18 @@ public class Sprite{
     private double velocityY;
     private double width;
     private double height;
+    public double tx,ty;
 
     public Sprite(){
         positionX = 0;
         positionY = 0;    
         velocityX = 0;
         velocityY = 0;
+    }
+    public void setXY(double ppx,double ppy){
+        tx=ppx;ty=ppy;
+        // System.out.println(tx+""+ty);
+        // System.out.println(positionX);
     }
 
     public void setImage(Image i){
@@ -33,6 +39,7 @@ public class Sprite{
     public void setPosition(double x, double y){
         positionX = x;
         positionY = y;
+        // System.out.println(positionX);
     }
 
     public void setVelocity(double x, double y){
@@ -46,17 +53,21 @@ public class Sprite{
     }
 
     public void update(double time){
-        double oo=150;double o=455;
-        if(positionX>o)velocityX-=oo;
+        double oo=150;double ox=tx-100;double oy=ty-100;
+        double g=(positionX/tx);
+        if(positionX>ox)velocityX-=oo;
         if(positionX<0)velocityX+=oo;
-        if(positionY>o)velocityY-=oo;
+        if(positionY>oy)velocityY-=oo;
         if(positionY<0)velocityY+=oo;
         positionX += velocityX * time;
         positionY += velocityY * time; 
     }
 
     public void render(GraphicsContext gc){
-        gc.drawImage( image, positionX, positionY );
+        double g=positionX*(tx/positionX);
+        System.out.println(g);
+        // positionY=positionY*(1000/ty);
+        gc.drawImage( image, positionX, positionY,100,100 );
     }
 
     public Rectangle2D getBoundary(){
