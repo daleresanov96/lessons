@@ -30,8 +30,8 @@ public class Example06 extends Application{
 		Group root=new Group();
 		Scene scene=new Scene(root);
 		stage.setScene(scene);
-
-		Canvas canvas=new Canvas(1000,1000);
+		stage.setFullScreen (true);
+		Canvas canvas=new Canvas(stage.getWidth(),stage.getHeight());
 		root.getChildren().add(canvas);
 		ArrayList<String>input=new ArrayList<String>();
 
@@ -59,17 +59,14 @@ public class Example06 extends Application{
 		briefcase.setImage("O2.gif");
 
 		ArrayList<Sprite>moneybagList=new ArrayList<Sprite>();
+		System.out.println(moneybagList);
 		int dots=2;
 		for (int i=0;i<dots;i++){
 			Sprite moneybag=new Sprite();
 			
 			moneybag.setImage("q.gif");
-			double px=750*Math.random()+100;
-			double py=750*Math.random()+105;
-
-			// px=px*(stage.getWidth()/tx);
-			// py=py*(stage.getHeight()/ty);
-
+			double px=tx*Math.random()+100;
+			double py=tx*Math.random()+105;
 			moneybag.setPosition(px,py);
 			moneybagList.add(moneybag);
 		}
@@ -102,7 +99,6 @@ public class Example06 extends Application{
 				}
 				double ppx=stage.getWidth()-16;
 				double ppy=stage.getHeight()-39;
-				// System.out.println(tx);
 				briefcase.setXY(tx,ty);
 				tx=ppx;ty=ppy;
 

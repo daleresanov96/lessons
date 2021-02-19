@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<runner version="1.0.0">
+<category expanded="true" name="カテゴリーなし">
+<launchConfiguration bookmark="false" defaultLaunchMode="run" name="CollorAfina"/>
+<launchConfiguration bookmark="false" defaultLaunchMode="run" name="Company"/>
+<launchConfiguration bookmark="false" defaultLaunchMode="run" name="DemoBehaviorProblem"/>
+<launchConfiguration bookmark="false" defaultLaunchMode="run" name="Dvijok02"/>
+<launchConfiguration bookmark="false" defaultLaunchMode="run" name="Example02"/>
+<launchConfiguration bookmark="false" defaultLaunchMode="run" name="Example022"/>
+<launchConfiguration bookmark="false" defaultLaunchMode="run" name="Example06"/>
+<launchConfiguration bookmark="false" defaultLaunchMode="run" name="Exapmle01"/>
+<launchConfiguration bookmark="false" defaultLaunchMode="run" name="G02"/>
+<launchConfiguration bookmark="false" defaultLaunchMode="run" name="Many"/>
+<launchConfiguration bookmark="false" defaultLaunchMode="run" name="Many02"/>
+<launchConfiguration bookmark="false" defaultLaunchMode="run" name="Test01"/>
+<launchConfiguration bookmark="false" defaultLaunchMode="run" name="Tetka"/>
+<launchConfiguration bookmark="false" defaultLaunchMode="run" name="TextReadSample"/>
+<launchConfiguration bookmark="false" defaultLaunchMode="run" name="TextWriteSample"/>
+<launchConfiguration bookmark="false" defaultLaunchMode="run" name="_HelloS"/>
+<launchConfiguration bookmark="false" defaultLaunchMode="run" name="ローカルホスト の Tomcat6 (Java6)"/>
+</category>
+</runner>

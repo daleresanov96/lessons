@@ -10,7 +10,7 @@ public class Sprite{
     private double velocityY;
     private double width;
     private double height;
-    public double tx,ty;
+    private double tx,ty;
 
     public Sprite(){
         positionX = 0;
@@ -20,8 +20,6 @@ public class Sprite{
     }
     public void setXY(double ppx,double ppy){
         tx=ppx;ty=ppy;
-        // System.out.println(tx+""+ty);
-        // System.out.println(positionX);
     }
 
     public void setImage(Image i){
@@ -39,7 +37,6 @@ public class Sprite{
     public void setPosition(double x, double y){
         positionX = x;
         positionY = y;
-        // System.out.println(positionX);
     }
 
     public void setVelocity(double x, double y){
@@ -64,10 +61,7 @@ public class Sprite{
     }
 
     public void render(GraphicsContext gc){
-        double g=positionX*(tx/positionX);
-        System.out.println(g);
-        // positionY=positionY*(1000/ty);
-        gc.drawImage( image, positionX, positionY,100,100 );
+        gc.drawImage(image, positionX, positionY,50,50 );
     }
 
     public Rectangle2D getBoundary(){
@@ -76,6 +70,7 @@ public class Sprite{
 
     public boolean intersects(Sprite s){
         return s.getBoundary().intersects( this.getBoundary() );
+        
     }
     
     public String toString(){

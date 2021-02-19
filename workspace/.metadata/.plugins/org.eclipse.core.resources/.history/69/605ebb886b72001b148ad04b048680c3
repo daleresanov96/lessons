@@ -1,0 +1,134 @@
+package developers;
+
+import java.util.ArrayList;
+
+import javafx.animation.AnimationTimer;
+import javafx.application.Application;
+import javafx.event.EventHandler;
+import javafx.scene.Scene;
+import javafx.scene.canvas.Canvas;
+import javafx.scene.canvas.GraphicsContext;
+import javafx.scene.input.KeyEvent;
+import javafx.scene.layout.Pane;
+import javafx.scene.paint.Color;
+import javafx.scene.paint.CycleMethod;
+import javafx.scene.paint.RadialGradient;
+import javafx.scene.paint.Stop;
+import javafx.stage.Stage;
+
+public class BarTestFX extends Application{
+	private BreakoutThread bt;
+
+	public static void main(String[] args) {
+		launch(args);
+	}
+	@Override
+	public void start(Stage stage) {
+		stage.setTitle("200023");
+
+		Pane pane =new Pane();
+		Scene scene=new Scene(pane);
+		stage.setScene(scene);
+
+		Canvas canvas=new Canvas(800,600);
+		GraphicsContext gc=canvas.getGraphicsContext2D();
+		pane.getChildren().add(canvas);
+
+		ArrayList<String>input=new ArrayList<String>();
+		scene.setOnKeyPressed(new EventHandler<KeyEvent>(){
+			public void handle(KeyEvent e){
+				String code=e.getCode().toString();
+				if(!input.contains(code))input.add(code);
+			}
+		});
+		scene.setOnKeyReleased(new EventHandler<KeyEvent>(){
+			public void handle(KeyEvent e){
+				String code=e.getCode().toString();
+				input.remove(code);
+			}
+		});
+		bt=new BreakoutThread(gc,input);
+		bt.start();
+		stage.show();
+	}
+
+}
+class BreakoutThread extends AnimationTimer{
+	private GraphicsContext gc;
+	private Ball ball;
+	private Bar bar;
+	private ArrayList<String>input;
+	private RadialGradient rg;
+
+	public BreakoutThread(GraphicsContext gc,ArrayList<String> input) {
+			this.gc=gc;
+			this.ball=new Ball();
+			this.bar=new Bar();
+			this.input=input;
+	}
+	@Override
+	public void handle(long time) {
+		gc.clearRect(0, 0, 800, 600);
+
+		rg = new RadialGradient(90,18,bar.ocolor()+40,300,300,false,CycleMethod.NO_CYCLE
+				,new Stop(0,Color.BLUE)
+				,new Stop(1,Color.SKYBLUE)
+				,new Stop(0.5,Color.ORANGE)
+		);
+		gc.setFill(rg);
+		gc.fillRect(0,0,800,600);
+
+		if(input.contains("LEFT")||input.contains("A"))
+			bar.move(-10);
+		if(input.contains("RIGHT")||input.contains("D"))
+			bar.move(10);
+		ball.draw(gc);
+		bar.draw(gc);
+		ball.move();
+	}
+}
+
+class Ball{
+	private double x;
+	private double y;
+	private double x_speed=5;
+	private double y_speed=5;
+	public Ball() {
+		this.x=20;this.y=20;
+	}
+	public void move() {
+		double ox=800;
+		double oy=600;
+		this.x+=x_speed;this.y+=y_speed;
+		if(x>=ox)x_speed=-5;
+        if(x<=0)x_speed=5;
+        if(y>=oy)y_speed=-5;
+        if(y<=0)y_speed=5;
+
+	}
+	public void draw (GraphicsContext gc) {
+		gc.setFill(Color.RED);
+		gc.fillOval(x, y, 20, 20);
+	}
+
+}
+class Bar{
+	private double x;
+	public Bar(){
+		this.x=360;
+	}
+	public void move(double px) {
+		double ox=720;
+		x+=px;
+		if(x>=ox)x-=10;
+        if(x<=0)x+=10;
+	}
+
+	public void draw(GraphicsContext gc) {
+		gc.setFill(Color.DARKORANGE);
+		gc.fillRect(x,560,80,20);
+	}
+	public double ocolor() {
+		return x;
+	}
+}

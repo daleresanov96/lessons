@@ -179,7 +179,6 @@ public class Dvijok02 extends Application{
 
 	//繧ｭ繝ｼ謚ｼ縺嶺ｸ九￡繧､繝吶Φ繝�
 	private void keyPressed(KeyEvent e) {
-		//荳贋ｸ句ｷｦ蜿ｳ繧ｭ繝ｼ繧呈款縺励◆譎ゅヵ繝ｩ繧ｰ繧丹N縺ｫ縺吶ｋ縲�
 		switch(e.getCode()) {
 		case LEFT:
 			isLeft = true;
@@ -191,10 +190,7 @@ public class Dvijok02 extends Application{
 			break;
 		}
 	}
-
-	//繧ｭ繝ｼ繧帝屬縺励◆譎ゅ�ｮ繧､繝吶Φ繝�
 	private void keyReleased(KeyEvent e) {
-		//荳贋ｸ句ｷｦ蜿ｳ繧ｭ繝ｼ繧帝屬縺励◆譎ゅヵ繝ｩ繧ｰ繧丹FF縺ｫ縺吶ｋ縲�
 		switch(e.getCode()) {
 		case LEFT:
 			isLeft = false;
